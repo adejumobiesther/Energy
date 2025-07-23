@@ -1,0 +1,9 @@
+fastapi
+uvicorn
+pydantic
+openai
+tiktoken
+sqlalchemy
+psycopg2-binary
+huggingface_hub
+
