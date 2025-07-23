@@ -7,8 +7,6 @@ Original file is located at
     https://colab.research.google.com/drive/1YUq_YUbAA9ZQECA43ZkXU4xgwkmX5DcE
 """
 
-!pip install fastapi uvicorn pyngrok openai pydantic
-
 import datetime
 from sqlalchemy import (
     Column, Integer, String, Text, Float, DateTime
@@ -225,23 +223,3 @@ async def student_chat(req: PromptRequest):
     )
     gen = openai_stream_generator(msgs, thread_id=req.threadId)
     return StreamingResponse(gen, media_type="text/event-stream")
-
-
-
-#needs requirements.txt
-!pip install koyebcli
-
-# Log in (you'll be prompted for your token)
-!koyeb login
-
-# Create a new Koyeb app
-!koyeb app create my-openai-proxy
-
-# Link the app to your GitHub repo
-!koyeb service create my-openai-proxy \
-  --source git="https://github.com/adejumobiesther/Energy.git" \
-  --buildpack python \
-  --run-command "uvicorn main:app --host 0.0.0.0"
-
-# (Optional) Set environment variable
-!koyeb env set OPENAI_API_KEY=sk-... --app my-openai-proxy
