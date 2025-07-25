@@ -139,72 +139,73 @@ class PromptRequest(BaseModel):
     model:str
 
 def openai_stream_generator(messages, model_val, thread_id):
-    #session = Session()
-    buffer = ""
-    output_tokens = 0
-    start_wall = time.perf_counter()
-    first_tok_time = None
-    model=model_val
+    try:
+        #session = Session()
+        buffer = ""
+        output_tokens = 0
+        start_wall = time.perf_counter()
+        first_tok_time = None
+        model=model_val
 
-    response = openai.chat.completions.create(
+        response = openai.chat.completions.create(
           model=model,
           messages=messages,
           temperature=0.7,
           max_tokens=800,
           stream=True
-    )
-    for chunk in response:
-        delta = chunk.choices[0].delta.content or ""
-        if not delta:
-            continue
-        if first_tok_time is None:
-            first_tok_time = time.perf_counter()
-            print(first_tok_time)
-        buffer += delta
-        yield f"data: {delta}\n\n"
-    yield "data: [DONE]\n\n"
-    output_tokens = token_count(buffer)
-    end_wall = time.perf_counter()
-    print(end_wall)
-    latency = first_tok_time - start_wall
-    gen_time = end_wall - first_tok_time
-    tps = output_tokens / gen_time
-    model_profile = power_profiles.get(model)
-    if not model_profile:
-      return 0, 0, 0, 0, 0, f"Error: Power profile not found for model: {model}"
+        )
+        for chunk in response:
+            delta = chunk.choices[0].delta.content or ""
+            if not delta:
+                continue
+            if first_tok_time is None:
+                first_tok_time = time.perf_counter()
+                print(first_tok_time)
+            buffer += delta
+            yield f"data: {delta}\n\n"
+        yield "data: [DONE]\n\n"
+        end_wall = time.perf_counter()
+    finally:
+        output_tokens = token_count(buffer)
+        latency = first_tok_time - start_wall
+        gen_time = end_wall - first_tok_time
+        tps = output_tokens / gen_time
+        model_profile = power_profiles.get(model)
+        if not model_profile:
+            return 0, 0, 0, 0, 0, f"Error: Power profile not found for model: {model}"
 
-    PGPU = model_profile["PGPU_kW"]
-    Pnon = model_profile["PnonGPU_kW"]
-    G = model_profile["G"]
-    N = model_profile["N"]
-    B = model_profile["B"]
-    D_gpu_list = model_profile["D_gpu"]
-    D_non = model_profile["D_non"]
-    pue = model_profile["PUE"]
+        PGPU = model_profile["PGPU_kW"]
+        Pnon = model_profile["PnonGPU_kW"]
+        G = model_profile["G"]
+        N = model_profile["N"]
+        B = model_profile["B"]
+        D_gpu_list = model_profile["D_gpu"]
+        D_non = model_profile["D_non"]
+        pue = model_profile["PUE"]
 
-    D_gpu = sum(D_gpu_list) / len(D_gpu_list) if D_gpu_list else 0
+        D_gpu = sum(D_gpu_list) / len(D_gpu_list) if D_gpu_list else 0
 
-    energy_usage = energy_per_query(output_tokens, tps, latency, PGPU, Pnon, G, N, B, D_gpu, D_non, pue)
-    wue_site, wue_source = 0.3, 3.142
-    water_usage = (energy_usage/pue * wue_site + energy_usage * wue_source)
-    carbon_usage = energy_usage * 0.3528
+        energy_usage = energy_per_query(output_tokens, tps, latency, PGPU, Pnon, G, N, B, D_gpu, D_non, pue)
+        wue_site, wue_source = 0.3, 3.142
+        water_usage = (energy_usage/pue * wue_site + energy_usage * wue_source)
+        carbon_usage = energy_usage * 0.3528
 
-    with Session() as session:
-      # metrics
-      metric = Metric(                     # your ORM class
-            thread_id     = thread_id,
-            user_text     = messages[-1]["content"],
-            assistant_text= buffer,
-            out_len       = output_tokens,
-            latency_ms    = latency,
-            gen_time_ms   = gen_time,
-            tps           = tps,
-            energy_usage  = energy_usage,
-            water_usage   = water_usage,
-            carbon_usage  = carbon_usage,
-         )
-      session.add(metric)
-      session.commit()
+        with Session() as session:
+            # metrics
+            metric = Metric(                     # your ORM class
+                thread_id     = thread_id,
+                user_text     = messages[-1]["content"],
+                assistant_text= buffer,
+                out_len       = output_tokens,
+                latency_ms    = latency,
+                gen_time_ms   = gen_time,
+                tps           = tps,
+                energy_usage  = energy_usage,
+                water_usage   = water_usage,
+                carbon_usage  = carbon_usage,
+             )
+          session.add(metric)
+          session.commit()
 
 @app.get("/")
 def root():
