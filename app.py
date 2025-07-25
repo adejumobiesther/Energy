@@ -204,8 +204,8 @@ def openai_stream_generator(messages, model_val, thread_id):
                 water_usage   = water_usage,
                 carbon_usage  = carbon_usage,
              )
-          session.add(metric)
-          session.commit()
+            session.add(metric)
+            session.commit()
 
 @app.get("/")
 def root():
