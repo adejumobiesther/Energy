@@ -136,14 +136,15 @@ class PromptRequest(BaseModel):
     extracted_history: list[dict]
     stream: bool = True
     threadId: str
+    model:str
 
-def openai_stream_generator(messages, thread_id):
+def openai_stream_generator(messages, model_val, thread_id):
     #session = Session()
     buffer = ""
     output_tokens = 0
     start_wall = time.perf_counter()
     first_tok_time = None
-    model="gpt-4.1"
+    model=model_val
 
     response = openai.chat.completions.create(
           model=model,
@@ -168,9 +169,6 @@ def openai_stream_generator(messages, thread_id):
     latency = first_tok_time - start_wall
     gen_time = end_wall - first_tok_time
     tps = output_tokens / gen_time
-    print(latency)
-    print(gen_time)
-    print(tps)
     model_profile = power_profiles.get(model)
     if not model_profile:
       return 0, 0, 0, 0, 0, f"Error: Power profile not found for model: {model}"
@@ -219,5 +217,5 @@ async def student_chat(req: PromptRequest):
         + req.extracted_history
         + [{"role":"user","content":req.user_message}]
     )
-    gen = openai_stream_generator(msgs, thread_id=req.threadId)
+    gen = openai_stream_generator(msgs, req.model, thread_id=req.threadId)
     return StreamingResponse(gen, media_type="text/event-stream")
