@@ -692,6 +692,7 @@ def llm_stream_generator(messages, model_val, thread_id):
             energy_usage   = energy_usage,
             water_usage    = water_usage,
             carbon_usage   = carbon_usage,
+            model = model_val
         )
         session.add(metric)
         session.commit()
