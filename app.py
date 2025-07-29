@@ -655,7 +655,7 @@ def llm_stream_generator(messages, model_val, thread_id):
 
     model_profile = power_profiles.get(model_val)
     if not model_profile:
-        return 0, 0, 0, 0, 0, f"Error: Power profile not found for model: {model}"
+        return 0, 0, 0, 0, 0, f"Error: Power profile not found for model: {model_val}"
 
     PGPU         = model_profile["PGPU_kW"]
     Pnon         = model_profile["PnonGPU_kW"]
