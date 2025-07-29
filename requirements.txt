@@ -6,4 +6,5 @@ tiktoken
 sqlalchemy
 psycopg2-binary
 huggingface_hub
+anthropic
 
