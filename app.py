@@ -592,6 +592,7 @@ def llm_stream_generator(messages, model_val, thread_id):
     buffer            = ""                         # ← string, like before
     start_wall        = time.perf_counter()
     first_tok_time    = None
+    model = model_val
 
     # -- choose backend -----------------------------------------------------
     if   model_val in OPENAI_MODELS:    provider = "openai"
@@ -692,7 +693,7 @@ def llm_stream_generator(messages, model_val, thread_id):
             energy_usage   = energy_usage,
             water_usage    = water_usage,
             carbon_usage   = carbon_usage,
-            model = model_val
+            model = model
         )
         session.add(metric)
         session.commit()
