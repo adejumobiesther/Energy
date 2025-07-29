@@ -583,7 +583,7 @@ ANTHROPIC_MODELS = {
 }
 
 # ------------------------------------------------------------------------
-async def llm_stream_generator(messages, model_val, thread_id):
+def llm_stream_generator(messages, model_val, thread_id):
     """
     Streams tokens for OpenAI / HF‑Llama / Claude models and performs the SAME
     metric + energy / water / carbon calculations you already had.
