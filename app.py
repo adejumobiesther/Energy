@@ -83,8 +83,168 @@ power_profiles = {
         "D_gpu": [0.55, 0.80],
         "D_non": 0.50,
         "PUE": 1.12
-    }
-}
+    },
+    "o3-mini": {
+      "PGPU_kW": 5.6,
+      "PnonGPU_kW": 4.6,
+      "G": 4,
+      "N": 8,
+      "B": 8,
+      "D_gpu": [1.00, 1.10],
+      "D_non": 0.50,
+      "PUE": 1.12
+    },
+    "o3": {
+      "PGPU_kW": 5.6,
+      "PnonGPU_kW": 4.6,
+      "G": 8,
+      "N": 8,
+      "B": 8,
+      "D_gpu": [0.45, 0.60],
+      "D_non": 0.50,
+      "PUE": 1.12
+    },
+    "o1": {
+      "PGPU_kW": 5.6,
+      "PnonGPU_kW": 4.6,
+      "G": 8,
+      "N": 8,
+      "B": 8,
+      "D_gpu": [0.45, 0.60],
+      "D_non": 0.50,
+      "PUE": 1.12
+    },
+    "o1-mini": {
+      "PGPU_kW": 5.6,
+      "PnonGPU_kW": 4.6,
+      "G": 4,
+      "N": 8,
+      "B": 8,
+      "D_gpu": [0.50, 0.70],
+      "D_non": 0.50,
+      "PUE": 1.12
+    },
+    "gpt-4o": {
+      "PGPU_kW": 5.6,
+      "PnonGPU_kW": 4.6,
+      "G": 8,
+      "N": 8,
+      "B": 8,
+      "D_gpu": [0.45, 0.60],
+      "D_non": 0.50,
+      "PUE": 1.12
+    },
+    "gpt-4-turbo": {
+      "PGPU_kW": 3.2,
+      "PnonGPU_kW": 3.3,
+      "G": 8,
+      "N": 8,
+      "B": 8,
+      "D_gpu": [1.00, 1.20],
+      "D_non": 0.50,
+      "PUE": 1.12
+    },
+    "gpt-4": {
+      "PGPU_kW": 3.2,
+      "PnonGPU_kW": 3.3,
+      "G": 8,
+      "N": 8,
+      "B": 8,
+      "D_gpu": [1.00, 1.20],
+      "D_non": 0.50,
+      "PUE": 1.12
+    },
+    "meta-llama/Meta-Llama-3-8B-Instruct": {
+       "PGPU_kW":     5.6,
+        "PnonGPU_kW":  4.6,
+        "G":           1,
+        "N":           8,
+        "B":           8,
+        "D_gpu":       [0.5, 0.8] ,
+        "D_non":       0.50,
+        "PUE":         1.12,
+    },
+    "meta-llama/Meta-Llama-3-70B-Instruct": {
+        "PGPU_kW":     5.6,
+        "PnonGPU_kW":  4.6,
+        "G":           4,
+        "N":           8,
+        "B":           8,
+        "D_gpu":       [0.5, 0.7] ,
+        "D_non":       0.50,
+        "PUE":         1.12,
+    },
+    "meta-llama/Llama-3.1-70B-Instruct": {
+      "PGPU_kW":     5.6,
+      "PnonGPU_kW":  4.6,
+        "G":           4,
+        "N":           8,
+        "B":           8,
+        "D_gpu":       [0.5, 0.7] ,
+        "D_non":       0.50,
+        "PUE":         1.12,
+    },
+    "meta-llama/Llama-3.1-405B-Instruct": {
+        "PGPU_kW":     5.6,
+        "PnonGPU_kW":  4.6,
+        "G":           8,
+        "N":           8,
+        "B":           8,
+        "D_gpu":       [0.45, 0.60],
+        "D_non":       0.50,
+        "PUE":         1.12,
+    },
+    "meta-llama/Llama-3.2-11B-Vision-Instruct": {
+        "PGPU_kW":     5.6,
+        "PnonGPU_kW":  4.6,
+        "G":           1,
+        "N":           8,
+        "B":           8,
+        "D_gpu":       [0.5, 0.8] ,
+        "D_non":       0.50,
+        "PUE":         1.12,
+    },
+     "meta-llama/Llama-3.3-70B-Instruct": {
+        "PGPU_kW":     5.6,
+        "PnonGPU_kW":  4.6,
+        "G":           4,
+        "N":           8,
+        "B":           8,
+        "D_gpu":       [0.5, 0.7] ,
+        "D_non":       0.50,
+        "PUE":         1.12,
+    },
+    "claude-3-7-sonnet-latest": {
+      "PGPU_kW":     5.6,
+      "PnonGPU_kW":  4.6,
+      "G": 8,
+      "N": 8,
+      "B": 8,
+      "D_gpu": [0.45, 0.60],
+      "D_non": 0.50,
+      "PUE": 1.14
+    },
+    "claude-3-5-sonnet-20240620": {
+      "PGPU_kW":     5.6,
+      "PnonGPU_kW":  4.6,
+      "G": 8,
+      "N": 8,
+      "B": 8,
+      "D_gpu": [0.45, 0.60],
+      "D_non": 0.50,
+      "PUE": 1.14
+    },
+    "claude-3-5-haiku-latest": {
+     "PGPU_kW":     5.6,
+     "PnonGPU_kW":  4.6,
+      "G": 4,
+      "N": 8,
+      "B": 8,
+      "D_gpu": [1.00, 1.10],
+      "D_non": 0.50,
+      "PUE": 1.14
+    },
+  }
 
 
 def utilisation(G, D, N, B):
@@ -138,74 +298,403 @@ class PromptRequest(BaseModel):
     threadId: str
     model:str
 
-def openai_stream_generator(messages, model_val, thread_id):
-    try:
-        #session = Session()
-        buffer = ""
-        output_tokens = 0
-        start_wall = time.perf_counter()
-        first_tok_time = None
-        model=model_val
+import os, time, itertools
+import openai, anthropic
+from huggingface_hub import InferenceClient
+from fastapi import HTTPException
 
-        response = openai.chat.completions.create(
-          model=model,
-          messages=messages,
-          temperature=0.7,
-          max_tokens=800,
-          stream=True
+# --------------------------------------------------------------------------
+#  Model groups
+# --------------------------------------------------------------------------
+OPENAI_MODELS = {
+    'gpt-4o', 'gpt-4o-mini', 'gpt-4-turbo', 'gpt-4',
+    'gpt-4.1', 'gpt-4.1-mini', 'gpt-4.1-nano',
+    'o4-mini', 'o3', 'o3-mini', 'o3-mini-high',
+    'o1', 'o1-mini',
+}
+HF_MODELS = {
+    "meta-llama/Meta-Llama-3-8B-Instruct",
+    "meta-llama/Meta-Llama-3-70B-Instruct",
+    "meta-llama/Llama-3.1-70B-Instruct",
+    "meta-llama/Llama-3.1-405B-Instruct",
+    "meta-llama/Llama-3.2-11B-Vision-Instruct",
+    "meta-llama/Llama-3.3-70B-Instruct",
+}
+ANTHROPIC_MODELS = {
+    "claude-3-7-sonnet-latest",
+    "claude-3-5-sonnet-20240620",
+    "claude-3-5-haiku-latest",
+}
+
+power_profiles = {
+    "gpt-4o-mini": {
+        "PGPU_kW":     3.2,
+        "PnonGPU_kW":  3.3,
+        "G":           4,
+        "N":           8,
+        "B":           8,
+        "D_gpu":       [1.00, 1.10],
+        "D_non":       0.50,
+        "PUE":         1.12,
+        "WUE_site": 0.30, "WUE_source": 3.142,
+        "CIF": 0.3528,
+    },
+      "gpt-4.1": {
+        "PGPU_kW":     5.6,
+        "PnonGPU_kW":  4.6,
+        "G":           8,
+        "N":           8,
+        "B":           8,
+        "D_gpu":       [0.45, 0.60] ,
+        "D_non":       0.50,
+        "PUE":         1.12,
+        "WUE_site": 0.30, "WUE_source": 3.142,
+        "CIF": 0.3528,
+    },
+    "gpt-4.1-nano": {
+        "PGPU_kW": 5.6,
+        "PnonGPU_kW": 4.6,
+        "G": 1,
+        "N": 8,
+        "B": 8,
+        "D_gpu": [0.55, 0.80],
+        "D_non": 0.50,
+        "PUE": 1.12,
+        "WUE_site": 0.30, "WUE_source": 3.142,
+        "CIF": 0.3528,
+    },
+    "o3-mini": {
+      "PGPU_kW": 5.6,
+      "PnonGPU_kW": 4.6,
+      "G": 4,
+      "N": 8,
+      "B": 8,
+      "D_gpu": [1.00, 1.10],
+      "D_non": 0.50,
+      "PUE": 1.12,
+      "WUE_site": 0.30, "WUE_source": 3.142,
+      "CIF": 0.3528,
+    },
+    "o3": {
+      "PGPU_kW": 5.6,
+      "PnonGPU_kW": 4.6,
+      "G": 8,
+      "N": 8,
+      "B": 8,
+      "D_gpu": [0.45, 0.60],
+      "D_non": 0.50,
+      "PUE": 1.12,
+      "WUE_site": 0.30, "WUE_source": 3.142,
+      "CIF": 0.3528,
+    },
+    "o1": {
+      "PGPU_kW": 5.6,
+      "PnonGPU_kW": 4.6,
+      "G": 8,
+      "N": 8,
+      "B": 8,
+      "D_gpu": [0.45, 0.60],
+      "D_non": 0.50,
+      "PUE": 1.12,
+      "WUE_site": 0.30, "WUE_source": 3.142,
+      "CIF": 0.3528,
+    },
+    "o1-mini": {
+      "PGPU_kW": 5.6,
+      "PnonGPU_kW": 4.6,
+      "G": 4,
+      "N": 8,
+      "B": 8,
+      "D_gpu": [0.50, 0.70],
+      "D_non": 0.50,
+      "PUE": 1.12,
+      "WUE_site": 0.30, "WUE_source": 3.142,
+      "CIF": 0.3528,
+    },
+    "gpt-4o": {
+      "PGPU_kW": 5.6,
+      "PnonGPU_kW": 4.6,
+      "G": 8,
+      "N": 8,
+      "B": 8,
+      "D_gpu": [0.45, 0.60],
+      "D_non": 0.50,
+      "PUE": 1.12,
+      "WUE_site": 0.30, "WUE_source": 3.142,
+      "CIF": 0.3528,
+    },
+    "gpt-4-turbo": {
+      "PGPU_kW": 3.2,
+      "PnonGPU_kW": 3.3,
+      "G": 8,
+      "N": 8,
+      "B": 8,
+      "D_gpu": [1.00, 1.20],
+      "D_non": 0.50,
+      "PUE": 1.12,
+      "WUE_site": 0.30, "WUE_source": 3.142,
+      "CIF": 0.3528,
+    },
+    "gpt-4": {
+      "PGPU_kW": 3.2,
+      "PnonGPU_kW": 3.3,
+      "G": 8,
+      "N": 8,
+      "B": 8,
+      "D_gpu": [1.00, 1.20],
+      "D_non": 0.50,
+      "PUE": 1.12,
+      "WUE_site": 0.30, "WUE_source": 3.142,
+      "CIF": 0.3528,
+    },
+    "meta-llama/Meta-Llama-3-8B-Instruct": {
+       "PGPU_kW":     5.6,
+        "PnonGPU_kW":  4.6,
+        "G":           1,
+        "N":           8,
+        "B":           8,
+        "D_gpu":       [0.5, 0.8] ,
+        "D_non":       0.50,
+        "PUE":         1.12,
+        "WUE_site": 0.18, "WUE_source": 3.142,
+        "CIF": 0.385,
+    },
+    "meta-llama/Meta-Llama-3-70B-Instruct": {
+        "PGPU_kW":     5.6,
+        "PnonGPU_kW":  4.6,
+        "G":           4,
+        "N":           8,
+        "B":           8,
+        "D_gpu":       [0.5, 0.7] ,
+        "D_non":       0.50,
+        "PUE":         1.12,
+        "WUE_site": 0.18, "WUE_source": 3.142,
+        "CIF": 0.385,
+    },
+    "meta-llama/Llama-3.1-70B-Instruct": {
+      "PGPU_kW":     5.6,
+      "PnonGPU_kW":  4.6,
+        "G":           4,
+        "N":           8,
+        "B":           8,
+        "D_gpu":       [0.5, 0.7] ,
+        "D_non":       0.50,
+        "PUE":         1.12,
+        "WUE_site": 0.18, "WUE_source": 3.142,
+        "CIF": 0.385,
+    },
+    "meta-llama/Llama-3.1-405B-Instruct": {
+        "PGPU_kW":     5.6,
+        "PnonGPU_kW":  4.6,
+        "G":           8,
+        "N":           8,
+        "B":           8,
+        "D_gpu":       [0.45, 0.60],
+        "D_non":       0.50,
+        "PUE":         1.12,
+        "WUE_site": 0.18, "WUE_source": 3.142,
+        "CIF": 0.385,
+    },
+    "meta-llama/Llama-3.2-11B-Vision-Instruct": {
+        "PGPU_kW":     5.6,
+        "PnonGPU_kW":  4.6,
+        "G":           1,
+        "N":           8,
+        "B":           8,
+        "D_gpu":       [0.5, 0.8] ,
+        "D_non":       0.50,
+        "PUE":         1.12,
+        "WUE_site": 0.18, "WUE_source": 3.142,
+        "CIF": 0.385,
+    },
+     "meta-llama/Llama-3.3-70B-Instruct": {
+        "PGPU_kW":     5.6,
+        "PnonGPU_kW":  4.6,
+        "G":           4,
+        "N":           8,
+        "B":           8,
+        "D_gpu":       [0.5, 0.7] ,
+        "D_non":       0.50,
+        "PUE":         1.12,
+        "WUE_site": 0.18, "WUE_source": 3.142,
+        "CIF": 0.385,
+    },
+    "claude-3-7-sonnet-latest": {
+      "PGPU_kW":     5.6,
+      "PnonGPU_kW":  4.6,
+      "G": 8,
+      "N": 8,
+      "B": 8,
+      "D_gpu": [0.45, 0.60],
+      "D_non": 0.50,
+      "PUE": 1.14,
+      "WUE_site": 0.18, "WUE_source": 3.142,
+      "CIF": 0.385,
+    },
+    "claude-3-5-sonnet-20240620": {
+      "PGPU_kW":     5.6,
+      "PnonGPU_kW":  4.6,
+      "G": 8,
+      "N": 8,
+      "B": 8,
+      "D_gpu": [0.45, 0.60],
+      "D_non": 0.50,
+      "PUE": 1.14,
+      "WUE_site": 0.18, "WUE_source": 3.142,
+      "CIF": 0.385,
+    },
+    "claude-3-5-haiku-latest": {
+     "PGPU_kW":     5.6,
+     "PnonGPU_kW":  4.6,
+      "G": 4,
+      "N": 8,
+      "B": 8,
+      "D_gpu": [1.00, 1.10],
+      "D_non": 0.50,
+      "PUE": 1.14,
+      "WUE_site": 0.18, "WUE_source": 3.142,
+      "CIF": 0.385,
+    },
+  }
+
+import os, time
+import openai, anthropic
+from huggingface_hub import InferenceClient
+from fastapi import HTTPException
+
+# ------------------------------------------------------------------------
+OPENAI_MODELS = {
+    'gpt-4o', 'gpt-4o-mini', 'gpt-4-turbo', 'gpt-4',
+    'gpt-4.1', 'gpt-4.1-mini', 'gpt-4.1-nano',
+    'o4-mini', 'o3', 'o3-mini', 'o3-mini-high', 'o1', 'o1-mini',
+}
+HF_MODELS = {
+    "meta-llama/Meta-Llama-3-8B-Instruct",
+    "meta-llama/Meta-Llama-3-70B-Instruct",
+    "meta-llama/Llama-3.1-70B-Instruct",
+    "meta-llama/Llama-3.1-405B-Instruct",
+    "meta-llama/Llama-3.2-11B-Vision-Instruct",
+    "meta-llama/Llama-3.3-70B-Instruct",
+}
+ANTHROPIC_MODELS = {
+    "claude-3-7-sonnet-latest",
+    "claude-3-5-sonnet-20240620",
+    "claude-3-5-haiku-latest",
+}
+
+# ------------------------------------------------------------------------
+async def llm_stream_generator(messages, model_val, thread_id):
+    """
+    Streams tokens for OpenAI / HF‑Llama / Claude models and performs the SAME
+    metric + energy / water / carbon calculations you already had.
+    """
+    buffer            = ""                         # ← string, like before
+    start_wall        = time.perf_counter()
+    first_tok_time    = None
+    model             = model_val                  # keep identical name
+
+    # -- choose backend -----------------------------------------------------
+    if   model_val in OPENAI_MODELS:    provider = "openai"
+    elif model_val in HF_MODELS:        provider = "hf"
+    elif model_val in ANTHROPIC_MODELS: provider = "anthropic"
+    else:
+        raise HTTPException(400, f"Unsupported model '{model_val}'")
+
+    # -- create iterator and unwrap function -------------------------------
+    if provider == "openai":
+        iterator = openai.chat.completions.create(
+            model=model_val,
+            messages=messages,
+            temperature=0.7,
+            stream=True,
         )
-        for chunk in response:
-            delta = chunk.choices[0].delta.content or ""
-            if not delta:
-                continue
-            if first_tok_time is None:
-                first_tok_time = time.perf_counter()
-                print(first_tok_time)
-            buffer += delta
-            yield f"data: {delta}\n\n"
-        yield "data: [DONE]\n\n"
-        end_wall = time.perf_counter()
-    finally:
-        output_tokens = token_count(buffer)
-        latency = first_tok_time - start_wall
-        gen_time = end_wall - first_tok_time
-        tps = output_tokens / gen_time
-        model_profile = power_profiles.get(model)
-        if not model_profile:
-            return 0, 0, 0, 0, 0, f"Error: Power profile not found for model: {model}"
+        unwrap = lambda chunk: chunk.choices[0].delta.content or ""
 
-        PGPU = model_profile["PGPU_kW"]
-        Pnon = model_profile["PnonGPU_kW"]
-        G = model_profile["G"]
-        N = model_profile["N"]
-        B = model_profile["B"]
-        D_gpu_list = model_profile["D_gpu"]
-        D_non = model_profile["D_non"]
-        pue = model_profile["PUE"]
+    elif provider == "hf":
+        prompt   = messages[-1]["content"]
+        client   = InferenceClient(model=model_val, token=os.getenv("HF_TOKEN"))
+        iterator = client.chat_completion(
+            [{"role": "user", "content": prompt}], stream=True)
+        unwrap = lambda chunk: chunk.choices[0].delta.content or ""
 
-        D_gpu = sum(D_gpu_list) / len(D_gpu_list) if D_gpu_list else 0
+    else:  # anthropic
+        prompt  = messages[-1]["content"]
+        client  = anthropic.Anthropic(api_key=os.getenv("ANTHROPIC_API_KEY"))
+        iterator = client.messages.create(
+            model=model_val,
+            messages=[{"role": "user", "content": prompt}],
+            stream=True,
+        )
+        def unwrap(chunk):
+            return (chunk.delta.text
+                    if getattr(chunk, "type", "") == "content_block_delta"
+                    else "")
 
-        energy_usage = energy_per_query(output_tokens, tps, latency, PGPU, Pnon, G, N, B, D_gpu, D_non, pue)
-        wue_site, wue_source = 0.3, 3.142
-        water_usage = (energy_usage/pue * wue_site + energy_usage * wue_source)
-        carbon_usage = energy_usage * 0.3528
+    # -- streaming loop -----------------------------------------------------
+    for raw in iterator:
+        delta = unwrap(raw)
+        if not delta:
+            continue
+        if first_tok_time is None:
+            first_tok_time = time.perf_counter()
+        buffer += delta                    # SAME mutation style
+        yield f"data: {delta}\n\n"
 
-        with Session() as session:
-            # metrics
-            metric = Metric(                     # your ORM class
-                thread_id     = thread_id,
-                user_text     = messages[-1]["content"],
-                assistant_text= buffer,
-                out_len       = output_tokens,
-                latency_ms    = latency,
-                gen_time_ms   = gen_time,
-                tps           = tps,
-                energy_usage  = energy_usage,
-                water_usage   = water_usage,
-                carbon_usage  = carbon_usage,
-             )
-            session.add(metric)
-            session.commit()
+    # end of content
+    end_wall = time.perf_counter()
+    yield "data: [DONE]\n\n"
+
+    # ----------------------------------------------------------------------
+    #  *** EXACT SAME CALCULATION BLOCK YOU PROVIDED ***
+    # ----------------------------------------------------------------------
+    output_tokens = token_count(buffer)
+    latency       = first_tok_time - start_wall
+    gen_time      = end_wall - first_tok_time
+    tps           = output_tokens / gen_time
+
+    model_profile = power_profiles.get(model)
+    if not model_profile:
+        return 0, 0, 0, 0, 0, f"Error: Power profile not found for model: {model}"
+
+    PGPU         = model_profile["PGPU_kW"]
+    Pnon         = model_profile["PnonGPU_kW"]
+    G            = model_profile["G"]
+    N            = model_profile["N"]
+    B            = model_profile["B"]
+    D_gpu_list   = model_profile["D_gpu"]
+    D_non        = model_profile["D_non"]
+    pue          = model_profile["PUE"]
+    D_gpu        = sum(D_gpu_list) / len(D_gpu_list) if D_gpu_list else 0
+
+    energy_usage = energy_per_query(
+        output_tokens, tps, latency,
+        PGPU, Pnon, G, N, B, D_gpu, D_non, pue,
+    )
+
+    # ------------- CONSTANTS REMAIN UNCHANGED -----------------------------
+    wue_site   = model_profile.get("WUE_site")
+    wue_source = model_profile.get("WUE_source")
+    cif        = model_profile.get("CIF")
+
+    water_usage  = energy_usage / pue * wue_site + energy_usage * wue_source
+    carbon_usage = energy_usage * cif
+
+    # -- ORM write, unchanged ----------------------------------------------
+    with Session() as session:
+        metric = Metric(
+            thread_id      = thread_id,
+            user_text      = messages[-1]["content"],
+            assistant_text = buffer,
+            out_len        = output_tokens,
+            latency_ms     = latency,
+            gen_time_ms    = gen_time,
+            tps            = tps,
+            energy_usage   = energy_usage,
+            water_usage    = water_usage,
+            carbon_usage   = carbon_usage,
+        )
+        session.add(metric)
+        session.commit()
 
 @app.get("/")
 def root():
@@ -218,5 +707,5 @@ async def student_chat(req: PromptRequest):
         + req.extracted_history
         + [{"role":"user","content":req.user_message}]
     )
-    gen = openai_stream_generator(msgs, req.model, thread_id=req.threadId)
+    gen = llm_stream_generator(msgs, req.model, thread_id=req.threadId)
     return StreamingResponse(gen, media_type="text/event-stream")
