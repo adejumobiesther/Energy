@@ -46,6 +46,7 @@ class Metric(Base):
 
     created_at   = Column(DateTime, nullable=False,
                              default=datetime.datetime.utcnow)
+     model         = Column(String) 
 
 engine = create_engine("postgresql://neondb_owner:npg_3jcGsgCk5rBE@ep-wild-water-afh5357n-pooler.c-2.us-west-2.aws.neon.tech/neondb?sslmode=require&channel_binding=require",
                        pool_pre_ping=True,   # ← ping before each use; reopen if dead
