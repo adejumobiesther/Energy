@@ -653,7 +653,7 @@ def llm_stream_generator(messages, model_val, thread_id):
     gen_time      = end_wall - first_tok_time
     tps           = output_tokens / gen_time
 
-    model_profile = power_profiles.get(model)
+    model_profile = power_profiles.get(model_val)
     if not model_profile:
         return 0, 0, 0, 0, 0, f"Error: Power profile not found for model: {model}"
 
